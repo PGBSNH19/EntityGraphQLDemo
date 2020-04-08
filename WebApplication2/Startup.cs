@@ -21,7 +21,7 @@ namespace WebApplication2
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson();
             services.AddDbContext<MyDbContext>(opt => opt.UseInMemoryDatabase("Grapqltest"));
             // add schema provider so we don't need to create it everytime
             // Also for this demo we expose all fields on MyDbContext. See below for details on building custom fields etc.
